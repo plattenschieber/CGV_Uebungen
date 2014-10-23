@@ -37,7 +37,8 @@ init( void )
     // 2. Berechne die anderen Punkte in einer Schleife und speichere sie im Array
     
     for (int i=0; i<NumPoints; i++) {
-
+        int j=rand()% 3; 
+        points[i]=(points[i-1] + vertices[j] )/2.0; 
     }
 
 
