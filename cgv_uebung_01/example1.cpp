@@ -107,7 +107,9 @@ main( int argc, char **argv )
 	
 
 
+#ifndef __APPLE__
     glewInit();
+#endif
     
     init();
 
