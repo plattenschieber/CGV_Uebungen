@@ -31,12 +31,8 @@ init( void )
 
 
     // 1. Suche dir irgendeinen Punkt als Startpunkt aus, der innerhalb Serpinski-Dreieck liegt.
-   
-    vec2 start;
-    int k=0;
-    while (points[k].x > vertices[0].x && points[k] < vertices[2].x
-            && points[k].y < vertices[1].y && points[k] > vertices[0].y);
     
+    points[0]=vec2(0.30, 0.30); 
 
     // 2. Berechne die anderen Punkte in einer Schleife und speichere sie im Array
     
