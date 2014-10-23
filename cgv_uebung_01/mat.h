@@ -122,6 +122,7 @@ class mat2 {
 	}
 
 	*this = a;
+    return *this;
     }
     
     mat2& operator /= ( const GLfloat s ) {
@@ -302,6 +303,7 @@ class mat3 {
 	}
 
 	*this = a;
+    return *this;
     }
 
     mat3& operator /= ( const GLfloat s ) {
@@ -492,6 +494,7 @@ class mat4 {
 	}
 
 	*this = a;
+    return *this;
     }
 
     mat4& operator /= ( const GLfloat s ) {
