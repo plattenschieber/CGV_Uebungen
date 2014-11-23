@@ -12,7 +12,7 @@ const int NumTetraeder = 0;
 const int NumVertices = 5000;
 /*******************************/
 
-vec2 points[5000];
+vec3 points[NumVertices];
 
 int fps = 20;
 float angle_param = 0.1;
