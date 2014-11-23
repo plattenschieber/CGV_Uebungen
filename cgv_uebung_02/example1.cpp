@@ -33,23 +33,24 @@ init( void )
     for(int i = 0; i < NumVertices; i++){
        float x = (float)rand() / RAND_MAX;
        float y = (float)rand() / RAND_MAX;
-       points[i] = vec2(x*2-1, y*2-1);
+       float z = (float)rand() / RAND_MAX;
+       points[i] = vec3(x*2-1, y*2-1, z*2-1);
     }
 
-    // Diese drei Punkte werden später die Eckpunkte des Serpienski-Dreiecks
-    vec2 vertices[3] = {
-        vec2( -1.0, -1.0 ), vec2( 0.0, 1.0 ), vec2( 1.0, -1.0 )
+    // Diese vier Punkte werden später die Eckpunkte des Serpienski-Dreiecks
+    vec3 vertices[4] = {
+        vec3( -1.0, -1.0, 0.0 ), vec3( 0.0, 1.0, 0.0 ), vec3( 1.0, -1.0, 0.0 ), vec3(0.0, 0.0, 1.0)
     };
 
     /****************************************************************************************/
     //AB HIER BITTE EIGENEN CODE EINFÜGEN!!!
 
     // 1. Suche dir irgendeinen Punkt als Startpunkt aus, der innerhalb Serpinski-Dreieck liegt.
-    points[0] = vec2(0.0, 0.0);
+    points[0] = vec3(0.0, 0.0, 0.0);
 
     // 2. Berechne die anderen Punkte in einer Schleife und speichere sie im Array
     for(int i = 1; i < NumVertices; i++){
-       int zufall = rand() % 3;
+       int zufall = rand() % 4;
        points[i] = (points[i-1] + vertices[zufall]) / 2;
     }
 
@@ -74,7 +75,7 @@ init( void )
     // Initialize the vertex position attribute from the vertex shader
     GLuint loc = glGetAttribLocation( program, "vPosition" );
     glEnableVertexAttribArray( loc );
-    glVertexAttribPointer( loc, 2, GL_FLOAT, GL_FALSE, 0,
+    glVertexAttribPointer( loc, 3, GL_FLOAT, GL_FALSE, 0,
                            BUFFER_OFFSET(0) );
 
     glClearColor( 1.0, 1.0, 1.0, 1.0 ); // white background
