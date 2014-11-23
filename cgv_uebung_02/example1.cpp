@@ -58,8 +58,8 @@ init( void )
 
     // Create a vertex array object
     GLuint vao;
-    glGenVertexArrays( 1, &vao );
-    glBindVertexArray( vao );
+    glGenVertexArraysAPPLE( 1, &vao );
+    glBindVertexArrayAPPLE( vao );
 
     // Create and initialize a buffer object
     GLuint buffer;
@@ -68,7 +68,7 @@ init( void )
     glBufferData( GL_ARRAY_BUFFER, sizeof(points), points, GL_STATIC_DRAW );
 
     // Load shaders and use the resulting shader program
-    GLuint program = InitShader( "../shader/vshader_01.glsl", "../shader/fshader_01.glsl" );
+    GLuint program = InitShader( "shader/vshader_01.glsl", "shader/fshader_01.glsl" );
     glUseProgram( program );
 
     // Initialize the vertex position attribute from the vertex shader
@@ -170,7 +170,9 @@ main( int argc, char **argv )
 
     glutCreateWindow( "Sierpinski Gasket" );
 
+#ifndef __APPLE__
     glewInit();
+#endif
     
     init();
 
