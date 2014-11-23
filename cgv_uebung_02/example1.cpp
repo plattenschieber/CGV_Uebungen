@@ -8,8 +8,8 @@ const int NumTimesToSubdivide = 5;
 
 /*******************************/
 /* Berechne die beiden Werte */ 
-const int NumTetraeder = 0;
-const int NumVertices = 5000;
+const int NumTetraeder = 1024; // = (int)Math.exp(4,NumTimesToSubdivide);
+const int NumVertices = NumTetraeder*4*3; // jedes Tetraeder hat 4 Dreiecke, die jeweils 3 Ecken haben
 /*******************************/
 
 vec3 points[NumVertices];
