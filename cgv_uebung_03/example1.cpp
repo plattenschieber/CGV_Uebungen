@@ -82,7 +82,7 @@ init( void )
     glBufferData( GL_ARRAY_BUFFER, sizeof(points), points, GL_STATIC_DRAW );
 
     // Load shaders and use the resulting shader program
-    GLuint program = InitShader( "../shader/vshader_03.glsl", "../shader/fshader_03.glsl" );
+    GLuint program = InitShader( "shader/vshader_03.glsl", "shader/fshader_03.glsl" );
     glUseProgram( program );
 
     // Initialize the vertex position attribute from the vertex shader
